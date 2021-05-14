@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head th:replace="plantilla :: head"></head>
+ 
+<body>
+ <header th:replace="plantilla :: header"></header> 
+    <div class="container mt-4">
+    	<div class="col-sm-6" style="margin: auto;">
+    		<form th:action="@{/save}" th:object=${persona} method="POST">
+	    		<div class="card">
+	    			<div class="card-header">
+	    			<h3>Gestión de Usuario</h3>
+	    			</div>
+	    			<div class="card-body">
+	    				<div class="form-group">
+	    					<label>ID</label>
+	    					<input th:field="*{id}" type="number" class="form-control"/>
+	    				</div>
+	    				<div class="form-group">
+	    					<label>Nombres</label>
+	    					<input th:field="*{name}" type="text" class="form-control"  pattern="[a-zA-ZáéíóúaÁÉÍÓÚÑñ ]{2,254}" required/>
+	    				</div>
+	    				<div class="form-group">
+	    					<label>Telefono</label>
+	    					<input th:field="*{telefono}" type="number" class="form-control"/>
+	    				</div>
+	    				<div class="form-group">
+	    					<label>Correo</label>
+	    					<input th:field="*{correo}" type="email" class="form-control"/>
+	    				</div>
+	    				<div class="form-group">
+	    					<label>Contraseña</label>
+	    					<input th:field="*{clave}" type="password" class="form-control"/>
+	    				</div>
+	    			
+	    			</div>
+	    			<div class="card-footer">
+	    			<input type="submit" value="Guardar" class="btn btn-success">
+	    			</div>
+	    		</div>
+    		</form>
+    	</div>
+	</div>
+
+</body>
+  
+
+ </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head th:replace="plantilla :: head"></head>
+
+<body>
+ <header th:replace="plantilla :: header"></header> 
+
+ 	<div class="container">
+ 		<br>
+ 		<h2><center>Gestión de Usuarios</center></h2>
+		<div class="container mt-4 ">
+		<a th:href="@{/new}" class="btn btn-primary">Nuevo Usuario</a>
+		<h1></h1>
+		<div class="container">
+		<div class="row"> 
+		<div class="col-lg-12">
+			<table class="table display nowrap" id="example" cellspacing="0" width="100%">
+			 <thead class="table-dark">
+				 <tr>
+					 <th>ID</th>
+					 <th>NOMBRE</th>
+					 <th>TELEFONO</th>
+					 <th>CORREO</th>
+					 <th>CONTRASEÑA</th>
+					 <th data-priority="1">ACCIONES</th>
+				 </tr>
+			 </thead> 
+				  <tbody>
+					  <tr th:each="persona:${personas}">
+						  <td th:text="${persona.id}"></td>
+						  <td th:text="${persona.name}"></td>
+						  <td th:text="${persona.telefono}"></td>
+						  <td th:text="${persona.correo}"></td>
+						  <td th:text="${persona.clave}"></td>
+						  <td>
+						  <a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">Editar</a>
+						  <a th:onclick="eliminar([[${persona.id}]])" class="btn btn-danger">Eliminar</a>
+						  </td>
+					  </tr>
+				  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+	</div>
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            responsive: true,
+            "language": {
+            "lengthMenu": "Mostrar _MENU_  Registros por Página",
+            "zeroRecords": "Nada encontrado - Disculpa",
+            "info": "Mostrando la Página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            'search': 'Buscar:',
+            'paginate':{
+				'next': 'Siguiente',
+				'previous': 'Anterior'
+			}
+        }
+            
+        });
+    } );  
+    
+    </script>
+		<script src= " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
+		<script src="funciones.js"></script>
+	</body>
+  
+
+ </html>
