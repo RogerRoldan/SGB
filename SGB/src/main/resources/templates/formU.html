@@ -17,20 +17,20 @@
 	    					<input th:field="*{id}" type="number" class="form-control"/>
 	    				</div>
 	    				<div class="form-group">
-	    					<label>Nombres</label>
-	    					<input th:field="*{name}" type="text" class="form-control"  pattern="[a-zA-ZáéíóúaÁÉÍÓÚÑñ ]{2,254}" required/>
+								<label>Nombres</label>
+	    					<input th:field="*{name}" type="text" class="form-control"  pattern="[a-zA-ZÃ¡Ã©Ã­Ã³ÃºaÃ�Ã‰Ã�Ã“ÃšÃ‘Ã± ]{2,254}" required/>
 	    				</div>
 	    				<div class="form-group">
-	    					<label>Telefono</label>
-	    					<input th:field="*{telefono}" type="number" class="form-control"/>
+								<label>Telefono</label>
+	    					<input th:field="*{telefono}" type="number" class="form-control" required/>
 	    				</div>
 	    				<div class="form-group">
 	    					<label>Correo</label>
-	    					<input th:field="*{correo}" type="email" class="form-control"/>
+	    					<input th:field="*{correo}" type="email" class="form-control" required/>
 	    				</div>
 	    				<div class="form-group">
-	    					<label>Contraseña</label>
-	    					<input th:field="*{clave}" type="password" class="form-control"/>
+	    					<label>ContraseÃ±a</label>
+								<input th:field="*{clave}" type="text" class="form-control" required/>
 	    				</div>
 	    			
 	    			</div>

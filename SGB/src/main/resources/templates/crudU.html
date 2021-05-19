@@ -1,6 +1,6 @@
 <!DOCTYPE html>
  <html xmlns:th="http://www.thymeleaf.org">
- <head th:replace="plantilla :: head"></head>
+ <head th:replace="plantilla :: head"><meta charset="utf-8"></head>
 
 <body>
  <header th:replace="plantilla :: header"></header> 
@@ -21,7 +21,7 @@
 					 <th>NOMBRE</th>
 					 <th>TELEFONO</th>
 					 <th>CORREO</th>
-					 <th>CONTRASEÑA</th>
+						
 					 <th data-priority="1">ACCIONES</th>
 				 </tr>
 			 </thead> 
@@ -31,7 +31,7 @@
 						  <td th:text="${persona.name}"></td>
 						  <td th:text="${persona.telefono}"></td>
 						  <td th:text="${persona.correo}"></td>
-						  <td th:text="${persona.clave}"></td>
+						  
 						  <td>
 						  <a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">Editar</a>
 						  <a th:onclick="eliminar([[${persona.id}]])" class="btn btn-danger">Eliminar</a>
@@ -40,10 +40,10 @@
 				  </tbody>
 			</table>
 		</div>
-	</div>
-</div>
-</div>
-	</div>
+		</div>
+		</div>
+		</div>
+  </div>
     <script>
     $(document).ready(function() {
         $('#example').DataTable({
