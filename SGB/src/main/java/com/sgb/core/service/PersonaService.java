@@ -40,4 +40,12 @@ public class PersonaService implements IpersonaService {
 		data.deleteById(id);
 	}
 
+	@Override
+	public int listarname(String username) {
+		return data.findByname(username).getId();
+	}
+	
+
+
+
 }

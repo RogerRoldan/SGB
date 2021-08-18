@@ -1,10 +1,14 @@
 package com.sgb.core.interfaces;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import com.sgb.core.modelo.Multa;
 
-import com.sgb.core.modelo.Persona;
 @Repository
-public interface IPersona extends CrudRepository<Persona, Integer> {
-	Persona findByname(String username);
+public interface IMulta extends CrudRepository<Multa, Integer> {
+
+	List<Multa> findByIdP(int idP);
+
+
 }

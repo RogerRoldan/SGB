@@ -1,12 +1,9 @@
 package com.sgb.core.service;
 
 import java.util.List;
-
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.sgb.core.interfaceService.ILibroService;
 import com.sgb.core.interfaces.ILibro;
 import com.sgb.core.modelo.Libro;

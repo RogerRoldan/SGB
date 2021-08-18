@@ -44,30 +44,10 @@
 		</div>
 		</div>
   </div>
-    <script>
-    $(document).ready(function() {
-        $('#example').DataTable({
-            responsive: true,
-            "language": {
-            "lengthMenu": "Mostrar _MENU_  Registros por Página",
-            "zeroRecords": "Nada encontrado - Disculpa",
-            "info": "Mostrando la Página _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay registros disponibles",
-            "infoFiltered": "(filtrado de _MAX_ registros totales)",
-            'search': 'Buscar:',
-            'paginate':{
-				'next': 'Siguiente',
-				'previous': 'Anterior'
-			}
-        }
-            
-        });
-    } );  
-    
-    </script>
-		<script src= " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
-		<script src="funciones.js"></script>
+    <script src="paginacion.js"></script>
+	<script src= "https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+	<script src= "funciones.js"></script>
+
 	</body>
   
-
- </html>
+</html>

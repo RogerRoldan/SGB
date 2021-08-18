@@ -1,7 +1,10 @@
 package com.sgb.core.modelo;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 /**
  * Esta clase  corresponde a la informacion de cada Persona
@@ -11,7 +14,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="persona")
-
 
 
 public class Persona {
@@ -28,6 +30,11 @@ public class Persona {
 	private String correo;
 	/**Telefono de la persona */
 	private String clave;
+	private boolean enabled;
+	
+	@OneToMany(mappedBy ="persona")
+	private List<Multa> multas;
+	
 	
 	/**Constructor General Persona */
 	public Persona() {
@@ -40,15 +47,17 @@ public class Persona {
 	 * @param correo de la persona
 	 * @param clave de la persona
 	 */
-	public Persona(int id, String name, String telefono, String correo, String clave) {
+	public Persona(int id, String name, String telefono, String correo, String clave, boolean enabled,
+			List<Multa> multas) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.telefono = telefono;
 		this.correo = correo;
 		this.clave = clave;
+		this.enabled = enabled;
+		this.multas = multas;
 	}
-	
 	/**Metodo para obtener el id de la persona
 	 * @return  id de la persona */
 	public int getId() {
@@ -99,7 +108,19 @@ public class Persona {
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
-
 	
+	public List<Multa> getMultas() {
+		return multas;
+	}
+	
+	public void setMultas(List<Multa> multas) {
+		this.multas = multas;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 }

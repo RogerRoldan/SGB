@@ -1,20 +1,43 @@
 package com.sgb.core.modelo;
+
+import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 /**
  * Esta clase  corresponde a la informacion de las multas
  * @author Roger, Marlon, Yesica
  *
  */
+
+@Entity
+@Table(name="multa")
+
+
 public class Multa {
 	/**Identificador de la multa*/
+	@Id
+	@GeneratedValue
 	private int idM;
 	/**Identificador del usuario*/
-	private int idU;
+	private int idP;
 	/**Descripcion de la multa*/
 	private String descripcion;
-	/**Identificador del libro*/
-	private int idL;
+	/**Fecha de la multa*/
+	private LocalDate fecha;
 	/**Valor de la multa*/
 	private double valor;
+	
+	/**Relaciones**/
+	@ManyToOne
+	@JoinColumn(name = "idP", insertable=false, updatable=false)
+	private Persona persona;
+	
+	
 	
 	/**Constructor General de la multa */
 	public Multa() {
@@ -27,12 +50,14 @@ public class Multa {
 	 * @param descripcion de la multa
 	 * @param idL del libro
 	 */
-	public Multa(int idM, int idU, String descripcion, int idL) {
+	public Multa(int idM, int idP, String descripcion, LocalDate fecha, double valor, Persona persona) {
 		super();
 		this.idM = idM;
-		this.idU = idU;
+		this.idP = idP;
 		this.descripcion = descripcion;
-		this.idL = idL;
+		this.fecha = fecha;
+		this.valor = valor;
+		this.persona = persona;
 	}
 
 	/**Metodo para obtener el id de la Multa
@@ -40,6 +65,8 @@ public class Multa {
 	public int getIdM() {
 		return idM;
 	}
+
+
 
 	/**Metodo para modificar el id de la Multa
 	 * @param  idM de la multa */
@@ -49,14 +76,14 @@ public class Multa {
 
 	/**Metodo para obtener el id del usuario
 	 * @return  id del usuario */
-	public int getIdU() {
-		return idU;
+	public int getIdP() {
+		return idP;
 	}
 
 	/**Metodo para modificar el id del usuario
 	 * @param  idU del usuario */
-	public void setIdU(int idU) {
-		this.idU = idU;
+	public void setIdP(int idP) {
+		this.idP = idP;
 	}
 
 	/**Metodo para obtener la descripcion de la multa
@@ -70,20 +97,37 @@ public class Multa {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
-	/**Metodo para modificar el id del libro
-	 * @return  idL del libro */
-	public int getIdL() {
-		return idL;
+	
+	/**Metodo para obtener la fecha de la multa
+	 * @return  fecha de la multa*/
+	public LocalDate getFecha() {
+		return fecha;
+	}
+	/**Metodo para modificar la fecha de la multa
+	 * @param  fecha de la multa*/
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
 	}
 
-	/**Metodo para modificar el id del libro
-	 * @param  idL del libro */
-	public void setIdL(int idL) {
-		this.idL = idL;
+	/**Metodo para obtener el valor de la multa
+	 * @return  valor de la multa*/
+	public double getValor() {
+		return valor;
 	}
 	
+	/**Metodo para modificar el valor de la multa
+	 * @param  valor de la multa*/
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+
 	
 }
-
-

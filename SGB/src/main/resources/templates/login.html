@@ -46,7 +46,7 @@
 			      </div>
 
 				<div class="form-group">
-							<button onclick="validcap()" class="btn btn-lg btn-success btn-block">Submit</button>
+							<button onclick="validcap()" class="btn btn-lg btn-success btn-block">Iniciar Sesión</button>
 				</div>			
 			</form>
 			 <h6>Captcha no visible <img th:src="@{/images/refresh.png}" src="/static/images/refresh.png" width="40px" onclick="cap()"></h6>
@@ -75,7 +75,9 @@
                   alert("Captcha Valido");
                   return true;
                 }else{
+                	window.location.reload(true);
                   alert("Captcha invalido");
+                  window.location.reload(true);
                   return false;
                 }
                }

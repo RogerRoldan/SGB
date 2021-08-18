@@ -12,12 +12,12 @@ function eliminar(id){
 					url:"/eliminar/"+id,
 					success: function(res) {
 						console.log(res);
-					}
+					},
 					});
 				    swal("Tu archivo ha sido eliminado!", {
 				      icon: "success",
-				    }).then((ok)=>{
-					if(ok){
+				    }).then((OK)=>{
+					if(OK){
 						location.href="/listar";
 					}
 				});

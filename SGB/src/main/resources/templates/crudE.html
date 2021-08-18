@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head th:replace="plantilla :: head"><!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"><meta charset="utf-8">
+	</head>
+
+<body>
+ <header th:replace="plantilla :: header"></header> 
+
+ 	<div class="container">
+ 		<br>
+ 		<h2 style="text-align: center;">Gestión de Ejemplares</h2>
+		<div class="container mt-4 ">
+			<div class="container">
+
+				<form  th:object=${libro} method="POST">
+					<div class="card">
+						<div class="card-header">
+							<input th:field="*{nombreL}" type="text"  style="font-weight:bold;text-align: center; font-size: 130%;" class="form-control" disabled="disabled"/>
+						</div>
+						<div class="card-body row">
+							
+							<div class="form-group col-sm-1">
+								<label>Código</label>
+								<input th:field="*{idL}" type="number" class="form-control" disabled="disabled"/>
+							</div>
+								
+							<div class="form-group col-sm-3">
+								<label>Género</label>
+								<input th:field="*{generoL}" type="text" class="form-control"  disabled="disabled"/>
+							</div>
+							
+							
+							<div class="form-group col-sm-4">
+								<label>Autor</label>
+								<input th:field="*{autor}" type="text" class="form-control" disabled="disabled"/>
+							</div>
+							
+							<div class="form-group col-sm-4">
+								<label>Editorial</label>
+								<input th:field="*{editorial}" type="text" class="form-control" disabled="disabled"/>
+							</div>
+							
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		<br>	
+		
+		<a  class="btn btn-primary" id="nuevoL" sec:authorize="hasRole('ROLE_ADMIN')" >Nuevo Ejemplar</a>
+		<h1></h1>
+		<div class="container">
+		<div class="row"> 
+		<div class="col-lg-12" style="align-content: center;">
+			<table class="table display nowrap" id="example" cellspacing="0" width="60%" style="margin: 0 auto; text-align: center;" >
+			 <thead class="table-dark">
+				 <tr>
+					 <th>ID EJEMPLAR</th>
+					 <th>ESTADO</th>
+				 </tr>
+			 </thead> 
+				  <tbody>
+					  <tr th:each="ejemplar:${ejemplar}">
+						  <td th:text="${ejemplar.idE}"></td>
+						  <td>
+							<ul class="navbar-nav">
+							
+								<li class="dropdown">
+									<a class="btn btn-warning dropdown-toggle" href="#"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">
+									  <span th:text="${ejemplar.estado}"></span>
+									</a>
+				  
+									<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" sec:authorize="hasRole('ROLE_ADMIN')" >
+									  <li><a class="dropdown-item" th:href="@{/editarE/{idE}/{idL}/Prestado(idL = ${ejemplar.idL}, idE = ${ejemplar.idE})}">Prestado</a></li>
+									  <li><a class="dropdown-item" th:href="@{/editarE/{idE}/{idL}/Disponible(idL = ${ejemplar.idL}, idE = ${ejemplar.idE})}">Disponible</a></li>
+									  <li><a class="dropdown-item" th:href="@{/editarE/{idE}/{idL}/Descalificado(idL = ${ejemplar.idL}, idE = ${ejemplar.idE})}">Descalificado</a></li>
+									</ul>
+							  </li>
+							</ul> 
+						  </td>
+					  </tr>
+				  </tbody>
+			</table>
+		</div>
+		</div>
+		</div>
+		</div>
+  </div>
+  	<script>
+		var url = location.pathname
+		var idlibro = url.split("/")[2]
+		var lelemento = document.getElementById("nuevoL")
+		console.log(idlibro)
+		lelemento.setAttribute("href",`/newE/${idlibro}`)
+	</script>
+	
+    <script src="/paginacion.js"></script>
+
+	
+	</body>
+  
+</html>

@@ -6,9 +6,12 @@ import java.util.Optional;
 import com.sgb.core.modelo.Persona;
 
 public interface IpersonaService {
-public List<Persona>listar();
-public Optional<Persona>listarId(int id);
-public int save(Persona p);
-public void delete(int id);
+	public List<Persona>listar();
+	public Optional<Persona>listarId(int id);
+	public int save(Persona p);
+	public void delete(int id);
+	public int listarname(String username);
+
+	
 
 }
