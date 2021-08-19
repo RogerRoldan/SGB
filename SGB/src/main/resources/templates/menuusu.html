@@ -1,8 +1,8 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org"
- xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
- lang="es">
+<html lang="en">
     <head>
+
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" th:href="@{/images/logo.png}" />
@@ -19,6 +19,8 @@
     </head>
     
     <body>
+
+    <main>
 
         <!-- barra-->
 	        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -62,20 +64,20 @@
             <section id=contenido>
                 <div class="seis">
                     <a th:href="@{crudL}">
-                        <img th:src="@{images/lipa2.png}" alt="">
-                        <h4>CONSULTAR</h4>
-                        <h4>LIBROS</h4>
+                        <img th:src="@{images/consultar.png}" alt="">
+                        <h4>CONSULTAR LIBROS</h4>
+                        
                     </a>
                 </div>
                 <div class="siete">
                     <a href="#">
-                        <img th:src="@{images/prestamos2.png}" alt="">
+                        <img th:src="@{images/prestamos.png}" alt="">
                         <h4>PRÉSTAMOS DE LIBROS</h4>
                     </a>
                 </div>
                 <div class="ocho">
                     <a th:href="@{crudMU}">
-                        <img th:src="@{images/consultarmultas2.png}" alt="">
+                        <img th:src="@{images/multa.png}" alt="">
                         <h4>CONSULTAR MULTAS</h4>
                     </a>
                 </div>

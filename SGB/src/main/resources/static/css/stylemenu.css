@@ -27,7 +27,7 @@ p.centrado {
 #contenido .uno{
     float: left;
     width: 230px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -45,13 +45,16 @@ p.centrado {
 }
   
 #contenido .uno img{
-    width: 150px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .uno h4{
     font-weight: 600;
+    margin: 25px;
 }
+
 
 #contenido .uno a{
     font-weight: 500;
@@ -62,7 +65,7 @@ p.centrado {
 #contenido .dos{
     float: left;
     width: 230px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     margin: 18px;
@@ -80,12 +83,14 @@ p.centrado {
 }
   
 #contenido .dos img{
-    width: 170px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .dos h4{
     font-weight: 600;
+    margin: 25px;
 }
 
 #contenido .dos a{
@@ -97,7 +102,7 @@ p.centrado {
 #contenido .tres{
     float: left;
     width: 230px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -115,13 +120,16 @@ p.centrado {
 }
   
 #contenido .tres img{
-    width: 140px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .tres h4{
     font-weight: 600;
+    margin: 25px;
 }
+
 
 #contenido .tres a{
     font-weight: 500;
@@ -132,7 +140,7 @@ p.centrado {
 #contenido .cuatro{
     float: left;
     width: 230px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -150,13 +158,16 @@ p.centrado {
 }
   
 #contenido .cuatro img{
-    width: 150px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .cuatro h4{
     font-weight: 600;
+    margin: 25px;
 }
+
 
 #contenido .cuatro a{
     font-weight: 500;
@@ -167,7 +178,7 @@ p.centrado {
 #contenido .cinco{
     float: left;
     width: 230px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -185,13 +196,16 @@ p.centrado {
 }
   
 #contenido .cinco img{
-    width: 130px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .cinco h4{
     font-weight: 600;
+    margin: 25px;
 }
+
 
 #contenido .cinco a{
     font-weight: 500;
@@ -202,13 +216,13 @@ p.centrado {
 #contenido .seis{
     float: left;
     width: 250px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin:80px;
     margin-top:50px;
-    margin-block: 50px;
+    margin-block:50px;
     text-align: center;
     transition: all 0.25s;
     background: #ffffff;
@@ -220,13 +234,16 @@ p.centrado {
 }
   
 #contenido .seis img{
-    width: 150px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .seis h4{
     font-weight: 600;
+    margin: 25px;
 }
+
  
 #contenido .seis a{
     font-weight: 500;
@@ -237,7 +254,7 @@ p.centrado {
 #contenido .siete{
     float: left;
     width: 250px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -255,13 +272,16 @@ p.centrado {
 }
   
 #contenido .siete img{
-    width: 150px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .siete h4{
     font-weight: 600;
+    margin: 25px;
 }
+
 
 #contenido .siete a{
     font-weight: 500;
@@ -272,7 +292,7 @@ p.centrado {
 #contenido .ocho{
     float: left;
     width: 250px;
-    height: 200px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -290,13 +310,16 @@ p.centrado {
 }
   
 #contenido .ocho img{
-    width: 130px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
+    margin: 25px;
 }
 
 #contenido .ocho h4{
     font-weight: 600;
+    margin: 25px;
 }
+
  
 #contenido .ocho a{
     font-weight: 500;
