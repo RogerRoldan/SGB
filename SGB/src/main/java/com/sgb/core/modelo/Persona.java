@@ -30,6 +30,7 @@ public class Persona {
 	private String correo;
 	/**Telefono de la persona */
 	private String clave;
+	private String rol;
 	private boolean enabled;
 	
 	@OneToMany(mappedBy ="persona")
@@ -47,7 +48,7 @@ public class Persona {
 	 * @param correo de la persona
 	 * @param clave de la persona
 	 */
-	public Persona(int id, String name, String telefono, String correo, String clave, boolean enabled,
+	public Persona(int id, String name, String telefono, String correo, String clave, String rol, boolean enabled,
 			List<Multa> multas) {
 		super();
 		this.id = id;
@@ -55,6 +56,7 @@ public class Persona {
 		this.telefono = telefono;
 		this.correo = correo;
 		this.clave = clave;
+		this.rol = rol;
 		this.enabled = enabled;
 		this.multas = multas;
 	}
@@ -63,6 +65,7 @@ public class Persona {
 	public int getId() {
 		return id;
 	}
+	
 	/**Metodo para modificar el id de la persona
 	 * @param  id de la persona */
 	public void setId(int id) {
@@ -115,6 +118,13 @@ public class Persona {
 	
 	public void setMultas(List<Multa> multas) {
 		this.multas = multas;
+	}
+	
+	public String getRol() {
+		return rol;
+	}
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 	public boolean isEnabled() {
 		return enabled;

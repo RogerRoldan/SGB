@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -24,6 +25,8 @@ public class ControladorU {
 	
 	@Autowired
 	private IpersonaService service;
+	@Autowired
+	private BCryptPasswordEncoder passEncoder;
 	
 	
 	@GetMapping({"/listar","/crudU"})
@@ -43,6 +46,10 @@ public class ControladorU {
 
 	@PostMapping("/save")
 	public String save(@Validated Persona p, Model model) {
+		p.setClave(passEncoder.encode(p.getClave()));
+		if(p.getRol()==null) {
+			p.setRol("ROLE_USER");
+		}
 		service.save(p);
 		return "redirect:/listar";
 	}
