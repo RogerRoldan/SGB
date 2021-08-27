@@ -46,7 +46,11 @@ public class ControladorU {
 
 	@PostMapping("/save")
 	public String save(@Validated Persona p, Model model) {
-		p.setClave(passEncoder.encode(p.getClave()));
+		int longitud = p.getClave().length();
+		if (longitud!=60) {
+			p.setClave(passEncoder.encode(p.getClave()));
+		}
+		
 		if(p.getRol()==null) {
 			p.setRol("ROLE_USER");
 		}
