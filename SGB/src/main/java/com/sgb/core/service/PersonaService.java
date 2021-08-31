@@ -41,8 +41,8 @@ public class PersonaService implements IpersonaService {
 	}
 
 	@Override
-	public int listarname(String username) {
-		return data.findByname(username).getId();
+	public Persona listarname(String username) {
+		return data.findByname(username);
 	}
 	
 

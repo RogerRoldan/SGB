@@ -10,7 +10,7 @@ public interface IpersonaService {
 	public Optional<Persona>listarId(int id);
 	public int save(Persona p);
 	public void delete(int id);
-	public int listarname(String username);
+	public Persona listarname(String username);
 
 	
 

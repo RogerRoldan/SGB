@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.sgb.core.interfaceService.IMultaService;
 import com.sgb.core.modelo.Multa;
+import com.sgb.core.modelo.Persona;
 import com.sgb.core.interfaceService.IpersonaService;
 
 @Controller
@@ -26,8 +27,8 @@ public class ControladorM {
 	@GetMapping("/crudMU")
 	public String tablaMU(Model model,org.springframework.security.core.Authentication auth) {
 	String username = auth.getName();
-	int idp = servicep.listarname(username);
-	List<Multa>multa=service.listarIdP(idp);
+	Persona p = servicep.listarname(username);
+	List<Multa>multa=service.listarIdP(p.getId());
 	model.addAttribute("multa",multa);
 		return "crudMU";
 	}

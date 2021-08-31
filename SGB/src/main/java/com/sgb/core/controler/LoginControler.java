@@ -13,17 +13,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 		
 		@GetMapping("/login")
 		public String login(@RequestParam(value="error", required=false) String error,
-				@RequestParam(value="logout", required=false) String logout, Model model, Principal principal, RedirectAttributes attribute){
+				@RequestParam(value="logout", required=false) String logout,
+				Model model, Principal principal, RedirectAttributes attribute){
 				if(error!=null) {
 					model.addAttribute("error","Error de Acceso: Usuario y/o Contraseña son incorrectos");
 				}
 				if(principal!=null) {
 					attribute.addFlashAttribute("warning","Sesion ya iniciada");
-					return "redirect:/menusu";
+					return "redirect:/";
 				}
 				if(logout!=null) {
 					attribute.addAttribute("sucess","Sesion cerrada");
-					return "redirect:/menuusu";
+					
 				}
 				
 				return "login";
