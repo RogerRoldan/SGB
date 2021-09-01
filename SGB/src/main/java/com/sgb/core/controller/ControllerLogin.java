@@ -1,4 +1,4 @@
-package com.sgb.core.controler;
+package com.sgb.core.controller;
 
 import java.security.Principal;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-	public class LoginControler {
+	public class ControllerLogin {
 		
 		@GetMapping("/login")
 		public String login(@RequestParam(value="error", required=false) String error,

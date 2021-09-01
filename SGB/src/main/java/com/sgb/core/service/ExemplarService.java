@@ -1,21 +1,19 @@
 package com.sgb.core.service;
 
 import java.util.List;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sgb.core.interfaceService.IEjemplarService;
-import com.sgb.core.interfaces.IEjemplar;
+import com.sgb.core.interfaceService.IExemplarService;
+import com.sgb.core.interfaces.IExemplar;
 import com.sgb.core.modelo.Ejemplar;
 
 
 @Service
-public class EjemplarService implements IEjemplarService{
+public class ExemplarService implements IExemplarService{
 	
 	@Autowired
-	private IEjemplar data;
+	private IExemplar data;
 	
 	@Override
 	public List<Ejemplar> tablaE() {

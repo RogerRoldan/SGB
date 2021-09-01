@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.sgb.core.modelo.Libro;
 @Repository
-public interface ILibro extends CrudRepository<Libro, Integer> {
+public interface IBook extends CrudRepository<Libro, Integer> {
 
 }

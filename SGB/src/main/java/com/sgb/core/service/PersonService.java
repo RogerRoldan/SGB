@@ -2,19 +2,17 @@ package com.sgb.core.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.sgb.core.interfaceService.IpersonaService;
-import com.sgb.core.interfaces.IPersona;
+import com.sgb.core.interfaceService.IPersonService;
+import com.sgb.core.interfaces.IPerson;
 import com.sgb.core.modelo.Persona;
 
 @Service
-public class PersonaService implements IpersonaService {
+public class PersonService implements IPersonService {
 
 	@Autowired
-	private IPersona data;
+	private IPerson data;
 	@Override
 	public List<Persona> listar() {
 		return (List<Persona>)data.findAll();

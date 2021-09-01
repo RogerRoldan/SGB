@@ -1,4 +1,4 @@
-package com.sgb.core.controler;
+package com.sgb.core.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sgb.core.interfaceService.IEjemplarService;
+import com.sgb.core.interfaceService.IExemplarService;
 import com.sgb.core.modelo.Ejemplar;
 import com.sgb.core.modelo.Libro;
-import com.sgb.core.interfaceService.ILibroService;
+import com.sgb.core.interfaceService.IBookService;
 
 
 @Controller
 @RequestMapping
 
-public class ControladorE {
+public class ControllerExemplar {
 	
 	@Autowired
-	private IEjemplarService service;
+	private IExemplarService service;
 	@Autowired
-	private ILibroService service1;
+	private IBookService servicebook;
 
 	@GetMapping({"/crudE/{idL}","/tablaE/{idL}"})
 	public String tablaE(@PathVariable int idL, Model model) {
-		Optional<Libro>libro=service1.listarID(idL);
+		Optional<Libro>libro=servicebook.listarID(idL);
 		model.addAttribute("libro", libro);
 		List<Ejemplar>ejemplar=service.listarIdL(idL);
 		model.addAttribute("ejemplar",ejemplar);

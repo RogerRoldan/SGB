@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.sgb.core.modelo.Ejemplar;
 
 @Repository
-public interface IEjemplar extends CrudRepository<Ejemplar, Integer>  {
+public interface IExemplar extends CrudRepository<Ejemplar, Integer>  {
 
 	List<Ejemplar> findByIdL(int idL);
 	Ejemplar findByIdE(int idE);

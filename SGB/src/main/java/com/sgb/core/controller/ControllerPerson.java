@@ -1,4 +1,4 @@
-package com.sgb.core.controler;
+package com.sgb.core.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sgb.core.interfaceService.IpersonaService;
+import com.sgb.core.interfaceService.IPersonService;
 import com.sgb.core.modelo.Persona;
 
 @Controller
 @Secured("ROLE_ADMIN")
 @RequestMapping
 
-public class ControladorU {
+public class ControllerPerson {
 	
 	@Autowired
-	private IpersonaService service;
+	private IPersonService service;
 	@Autowired
 	private BCryptPasswordEncoder passEncoder;
 	

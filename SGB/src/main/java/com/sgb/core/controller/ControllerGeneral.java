@@ -1,19 +1,18 @@
-package com.sgb.core.controler;
+package com.sgb.core.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.sgb.core.interfaceService.IpersonaService;
+import com.sgb.core.interfaceService.IPersonService;
 import com.sgb.core.modelo.Persona;
 
 @Controller
 @RequestMapping
-public class Controlador {
+public class ControllerGeneral {
 	
 	@Autowired
-	private IpersonaService service;
+	private IPersonService service;
 	
 	
 	@GetMapping({"/","index"})

@@ -4,14 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sgb.core.interfaceService.IMultaService;
-import com.sgb.core.interfaces.IMulta;
+import com.sgb.core.interfaceService.IFineService;
+import com.sgb.core.interfaces.IFine;
 import com.sgb.core.modelo.Multa;
 @Service
-public class MultaService implements IMultaService {
+public class FineService implements IFineService {
 
 	@Autowired
-	private IMulta data;
+	private IFine data;
 	
 	@Override
 	public List<Multa> tablaM() {

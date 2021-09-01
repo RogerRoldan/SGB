@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sgb.core.interfaceService.ILibroService;
-import com.sgb.core.interfaces.ILibro;
+import com.sgb.core.interfaceService.IBookService;
+import com.sgb.core.interfaces.IBook;
 import com.sgb.core.modelo.Libro;
 @Service
-public class LibroService implements ILibroService{
+public class BookService implements IBookService{
 	
 	@Autowired
-	private ILibro data;
+	private IBook data;
 	@Override
 	public List<Libro> tablaL() {
 		return (List<Libro>)data.findAll();
