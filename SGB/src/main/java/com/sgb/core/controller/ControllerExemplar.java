@@ -31,7 +31,7 @@ public class ControllerExemplar {
 		model.addAttribute("libro", libro);
 		List<Ejemplar>ejemplar=service.listarIdL(idL);
 		model.addAttribute("ejemplar",ejemplar);
-		return "crudE";
+		return "CrudExemplar";
 	}
 	@GetMapping("/newE/{idL}")
 	public String agregarE(@PathVariable int idL,Model model) {

@@ -24,25 +24,25 @@ public class ControllerGeneral {
 		
 		switch(role) {
 		case ("ROLE_ADMIN"):
-			return "menuadmin";
+			return "MenuAdministrator";
 		
 			
 		case ("ROLE_USER"):
-			return "menuusu";
+			return "MenuUser";
 			
 		default: return "";
 		}
 			}
 
 	
-	@GetMapping("/menuadministrador")
+	@GetMapping("/MenuAdministrador")
 	public String menuadmin(){
-		return "menuadmin";
+		return "MenuAdministrator";
 	}
 	
-	@GetMapping("/menuusuario")
+	@GetMapping("/MenuUsuario")
 	public String menuusu(){
-		return "menuusu";
+		return "MenuUser";
 	}
 	}
 	

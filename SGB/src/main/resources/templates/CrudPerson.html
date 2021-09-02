@@ -9,7 +9,7 @@
  		<br>
  		<h2><center>Gestión de Usuarios</center></h2>
 		<div class="container mt-4 ">
-		<a th:href="@{/new}" class="btn btn-primary">Nuevo Usuario</a>
+		<a th:href="@{/newP}" class="btn btn-primary">Nuevo Usuario</a>
 		<h1></h1>
 		<div class="container">
 		<div class="row"> 
@@ -33,8 +33,8 @@
 						  <td th:text="${persona.correo}"></td>
 						  
 						  <td>
-						  <a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">Editar</a>
-						  <a th:onclick="eliminar([[${persona.id}]])" class="btn btn-danger">Eliminar</a>
+						  <a th:href="@{/editarP/}+${persona.id}" class="btn btn-warning">Editar</a>
+						  <a th:onclick="eliminarP([[${persona.id}]])" class="btn btn-danger">Eliminar</a>
 						  </td>
 					  </tr>
 				  </tbody>

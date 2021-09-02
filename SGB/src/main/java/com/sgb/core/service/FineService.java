@@ -42,4 +42,17 @@ public class FineService implements IFineService {
 	}
 
 
+	@Override
+	public List<Multa> listarIdPAndEstado(int idP, String estadomulta) {
+		
+		return data.findByIdPAndEstadomulta(idP, estadomulta);
+	}
+
+
+
+
+
 }
+
+
+

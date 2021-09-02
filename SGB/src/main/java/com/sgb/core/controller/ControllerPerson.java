@@ -33,18 +33,18 @@ public class ControllerPerson {
 	public String listar(Model model) {
 		List<Persona>personas=service.listar();
 		model.addAttribute("personas", personas);
-		return "crudU";
+		return "CrudPerson";
 	}
 	
 
-	@GetMapping("/new")
+	@GetMapping("/newP")
 	public String agregar(Model model) {
 		model.addAttribute("persona",new Persona());
-		return "formU";
+		return "FormPerson";
 	}
 	
 
-	@PostMapping("/save")
+	@PostMapping("/saveP")
 	public String save(@Validated Persona p, Model model) {
 		int longitud = p.getClave().length();
 		if (longitud!=60) {
@@ -55,21 +55,21 @@ public class ControllerPerson {
 			p.setRol("ROLE_USER");
 		}
 		service.save(p);
-		return "redirect:/listar";
+		return "redirect:/crudU";
 	}
 	
 
-	@GetMapping ("/editar/{id}")
+	@GetMapping ("/editarP/{id}")
 	public String editar(@PathVariable int id, Model model) {
 		Optional<Persona>persona=service.listarId(id);
 		model.addAttribute("persona", persona);
-		return "formU";
+		return "FormPerson";
 	}
 	
 	
-	@GetMapping ("/eliminar/{id}")
+	@GetMapping ("/eliminarP/{id}")
 	public String delete(Model model,@PathVariable int id) {
 		service.delete(id);
-		return "redirect:/listar";
+		return "redirect:/crudU";
 	}
 }

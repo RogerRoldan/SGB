@@ -27,6 +27,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					
 				}
 				
-				return "login";
+				return "Login";
 		}
 }

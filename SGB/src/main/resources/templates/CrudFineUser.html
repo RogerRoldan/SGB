@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+ <head th:replace="plantilla :: head"></head>
+
+<body>
+ <header th:replace="plantilla :: header"></header> 
+	<!-- tabla-->
+	<div class="container">
+	<br>
+	<h2 align="center">Multas Activas</h2>
+	<div class="container mt-4 ">
+		<div class="container">
+
+			<form  th:object=${persona} method="POST">
+				<div class="card">
+					<div class="card-header">
+						<input th:field="*{name}" type="text"  style="font-weight:bold;text-align: center; font-size: 130%;" class="form-control" disabled="disabled"/>
+					</div>
+					<div class="card-body row">
+						
+						<div class="form-group col-sm-2">
+							<label>Código</label>
+							<input th:field="*{id}" type="number" class="form-control" disabled="disabled"/>
+						</div>
+							
+						<div class="form-group col-sm-6">
+							<label>Correo</label>
+							<input th:field="*{correo}" type="text" class="form-control"  disabled="disabled"/>
+						</div>
+						
+						
+						<div class="form-group col-sm-4">
+							<label>Teléfono</label>
+							<input th:field="*{telefono}" type="text" class="form-control" disabled="disabled"/>
+						</div>
+						
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	<br>	
+	<h1></h1>
+	<div class="container">
+		<div class="row"> 
+			<div class="col-lg-12">
+			<table class="table display nowrap" id="example" cellspacing="0" width="100%">
+		 	<thead class="table-dark">
+			 <tr>
+				 <th>ID MULTA</th>
+				 <th data-priority="1">DESCRIPCIÓN</th>
+				 <th>FECHA</th>
+				 <th>VALOR</th>
+				 <th style="text-align: center;" data-priority="1">ACCIONES</th>
+			 </tr>
+		 	</thead> 
+			  <tbody>
+				   <tr th:each="multa:${multa}">
+					  <td th:text="${multa.idM}"></td>
+					  <td th:text="${multa.descripcion}"></td>
+					  <td th:text="${multa.fecha}"></td>
+					  <td th:text="${multa.valor}"></td>
+					  <td align="center" >
+						<a th:href="@{/crudMAU/}+${multa.idP}" class="btn btn-success">Pagar</a>
+
+						</td>				  
+				  </tr>
+			  </tbody>
+		</table>
+			</div>
+		</div>
+	</div>
+	</div>	
+	</div>
+     <script src="/paginacion.js"></script>
+</body>
+ </html>

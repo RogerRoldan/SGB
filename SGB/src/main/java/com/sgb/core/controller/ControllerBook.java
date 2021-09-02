@@ -28,25 +28,25 @@ public class ControllerBook {
 	public String tablaL(Model model) {
 		List<Libro>libro=service.tablaL();
 		model.addAttribute("libro", libro);
-		return "crudL";
+		return "CrudBook";
 	}
 	
 	@GetMapping("/newL")
 	public String agregarL(Model model) {
 		model.addAttribute("libro",new Libro());
-		return "formL";
+		return "FormBook";
 	}
 	
 	@PostMapping("/saveL")
 	public String saveL(@Validated Libro l,Model model) {
 		service.saveL(l);
-		return "redirect:/tablaL";
+		return "redirect:/CrudBook";
 	}
 	
 	@GetMapping("/editarL/{idL}")
 	public String editar(@PathVariable int idL, Model model) {
 		Optional<Libro>libro=service.listarID(idL);
 		model.addAttribute("libro", libro);
-		return "formL";
+		return "FormBook";
 	}
 }

@@ -8,5 +8,8 @@ public interface IFineService {
 	public int saveM(Multa m);
 	public void delete(int id);
 	public List<Multa> listarIdP(int idP);
+	public List<Multa> listarIdPAndEstado(int idP, String estadomulta);
+	
+	
 
 }

@@ -29,6 +29,8 @@ public class Multa {
 	private String descripcion;
 	/**Fecha de la multa*/
 	private LocalDate fecha;
+	/**Estado de la multa*/
+	private String estadomulta;
 	/**Valor de la multa*/
 	private double valor;
 	
@@ -50,12 +52,13 @@ public class Multa {
 	 * @param descripcion de la multa
 	 * @param idL del libro
 	 */
-	public Multa(int idM, int idP, String descripcion, LocalDate fecha, double valor, Persona persona) {
+	public Multa(int idM, int idP, String descripcion, LocalDate fecha,String estadomulta, double valor, Persona persona) {
 		super();
 		this.idM = idM;
 		this.idP = idP;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
+		this.estadomulta = estadomulta;
 		this.valor = valor;
 		this.persona = persona;
 	}
@@ -107,6 +110,15 @@ public class Multa {
 	 * @param  fecha de la multa*/
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
+	}
+	
+
+	public String getEstadomulta() {
+		return estadomulta;
+	}
+
+	public void setEstadomulta(String estadomulta) {
+		this.estadomulta = estadomulta;
 	}
 
 	/**Metodo para obtener el valor de la multa
