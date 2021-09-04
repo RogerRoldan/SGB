@@ -1,6 +1,6 @@
 <!DOCTYPE html>
  <html xmlns:th="http://www.thymeleaf.org">
- <head th:replace="plantilla :: head"></head>
+ <head th:replace="plantilla :: head"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"></head>
 
 <body>
  <header th:replace="plantilla :: header"></header> 
@@ -16,9 +16,9 @@
 			<table class="table display nowrap" id="example" cellspacing="0" width="100%">
 			 <thead class="table-dark">
 				 <tr>
-					 <th>ID</th>
-					 <th>NOMBRE</th>
-					 <th style="text-align: center;" data-priority="1">ACCIONES</th>
+					 <th data-priority="1">ID</th>
+					 <th data-priority="2" >NOMBRE</th>
+					 <th style="text-align: center;" data-priority="3">ACCIONES</th>
 				 </tr>
 			 </thead> 
 				  <tbody >
@@ -28,7 +28,7 @@
 						  
 						  <td align="center" >
 						  <a th:href="@{/crudMAUA/}+${persona.id}" class="btn btn-info">Activas</a>
-						  <a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">Nueva Multa</a>
+						  <a th:href="@{/newMulta/}+${persona.id}" class="btn btn-warning">Nueva Multa</a>
 						  <a th:href="@{/crudMAUC/}+${persona.id}" class="btn btn-secondary">Historial</a>
 						  </td>
 					  </tr>

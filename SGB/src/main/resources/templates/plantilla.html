@@ -58,6 +58,9 @@
 								<a class="nav-link active" aria-current="page" th:href="@{/CrudMultasAdministrador}" href="crudL.index">Gestión de Multas</a>
 							</li>
 							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" th:href="@{/CrudLoanAdmin}" href="crudL.index" sec:authorize="hasRole('ROLE_ADMIN')">Gestión de Préstamos</a>
+							</li>
+							<li class="nav-item">
 								<a class="nav-link" th:href="@{/MenuUsuario}">Menú Usuario</a>
 							</li>
 							</ul>

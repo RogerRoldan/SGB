@@ -1,15 +1,16 @@
 package com.sgb.core.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.sgb.core.modelo.Multa;
 import com.sgb.core.modelo.Persona;
@@ -20,7 +21,6 @@ import com.sgb.core.interfaceService.IPersonService;
 
 @Controller
 @RequestMapping
-@Secured({"ROLE_ADMIN","ROLE_USER"})
 public class ControllerFine {
 	
 	
@@ -41,10 +41,11 @@ public class ControllerFine {
 		
 		model.addAttribute("multa",multa);
 		model.addAttribute("persona",p);
-		return "CrudHistoric";
+		return "CrudFineUser";
 	}
 	
 	
+	@Secured({"ROLE_ADMIN"})
 	@GetMapping("/crudMAUA/{idp}")
 	public String tablaMAUA(Model model, @PathVariable int idp) {
 		
@@ -56,6 +57,8 @@ public class ControllerFine {
 		return "CrudFineUser";
 	}
 	
+	
+	@Secured({"ROLE_ADMIN"})
 	@GetMapping("/crudMAUC/{idp}")
 	public String tablaMAUC(Model model, @PathVariable int idp) {
 		Optional<Persona> p= serviceperson.listarId(idp);
@@ -67,6 +70,7 @@ public class ControllerFine {
 	}
 	
 	
+	@Secured({"ROLE_ADMIN"})
 	@GetMapping("/CrudMultasAdministrador")
 	public String tablaMA(Model model) {
 	
@@ -75,6 +79,23 @@ public class ControllerFine {
 		return "CrudFineAdministrator";
 	}
 	
-
+	@GetMapping("/newMulta/{idP}")
+	public String agregarMulta(@PathVariable int idP, Model model) {
+		
+		Multa multa = new Multa();
+		multa.setIdP(idP);
+		model.addAttribute("multa",multa);
+		return "FormFine"; 
+		}
+	
+	@PostMapping("/saveMulta")
+	public String saveL(@Validated Multa m,Model model) {
+		m.setFecha(LocalDate.now());
+		m.setEstadomulta("Pendiente");
+		service.saveM(m);
+		int idp=m.getIdP();
+		return "redirect:/crudMAUA/"+idp;
+	}
+		
 
 }

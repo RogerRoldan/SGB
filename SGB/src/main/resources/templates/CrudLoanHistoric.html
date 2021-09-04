@@ -8,7 +8,7 @@
 	<!-- tabla-->
 	<div class="container">
 	<br>
-	<h2 align="center">Multas Activas</h2>
+	<h2 align="center">Historial de Préstamos</h2>
 	<div class="container mt-4 ">
 		<div class="container">
 
@@ -48,21 +48,23 @@
 			<table class="table display nowrap" id="example" cellspacing="0" width="100%">
 		 	<thead class="table-dark">
 			 <tr>
-				 <th>ID MULTA</th>
-				 <th data-priority="1">DESCRIPCIÓN</th>
-				 <th>FECHA</th>
-				 <th>VALOR</th>
-				 <th style="text-align: center;" data-priority="1" sec:authorize="hasRole('ROLE_ADMIN')">ACCIONES</th>
+				 <th>ID PRESTAMO</th>
+				 <th data-priority="1">LIBRO</th>
+				 <th>EJEMPLAR</th>
+				 <th>FECHA INICIAL</th>
+				 <th>FECHA FINAL</th>
+	
 			 </tr>
 		 	</thead> 
 			  <tbody>
-				   <tr th:each="multa:${multa}">
-					  <td th:text="${multa.idM}"></td>
-					  <td th:text="${multa.descripcion}"></td>
-					  <td th:text="${multa.fecha}"></td>
-					  <td th:text="${multa.valor}"></td>
-					  <td align="center" sec:authorize="hasRole('ROLE_ADMIN')" >
-						<a th:href="@{/pagomulta/}+${multa.idM}+${multa.idP}" class="btn btn-success">Pagar</a>
+				   <tr th:each="prestamo:${prestamo}">
+					  <td th:text="${prestamo.idPrestamo}"></td>
+					  <td th:text="${prestamo.idLibro}"></td>
+					  <td th:text="${prestamo.idEjemplar}"></td>
+					  <td th:text="${prestamo.finicio}"></td>
+					  <td th:text="${prestamo.ffinal}"></td>
+					  
+					  <td align="center" >
 
 						</td>				  
 				  </tr>

@@ -26,7 +26,7 @@
 	        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	            <div class="container-fluid">
                     <img th:src="@{/images/logo.png}"  width="60px" >
-                    <a class="navbar-brand" th:href="@{/MenuUsuario}">SGB</a>
+                    <a class="navbar-brand" th:href="@{/}">SGB</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -70,7 +70,7 @@
                     </a>
                 </div>
                 <div class="siete">
-                    <a href="#">
+                    <a th:href="@{CrudLoan}">
                         <img th:src="@{images/prestamos.png}" alt="">
                         <h4>PRÉSTAMOS DE LIBROS</h4>
                     </a>

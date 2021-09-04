@@ -4,7 +4,6 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 /**
  * Esta clase  corresponde a la informacion de cada Persona
@@ -20,7 +19,6 @@ public class Persona {
 	/**Identificador de la persona*/
 	@Id
 	@GeneratedValue
-	
 	private int id;
 	/**Nombre Persona */
 	private String name;
@@ -33,8 +31,7 @@ public class Persona {
 	private String rol;
 	private boolean enabled;
 	
-	@OneToMany(mappedBy ="persona")
-	private List<Multa> multas;
+
 	
 	
 	/**Constructor General Persona */
@@ -58,7 +55,7 @@ public class Persona {
 		this.clave = clave;
 		this.rol = rol;
 		this.enabled = enabled;
-		this.multas = multas;
+		
 	}
 	/**Metodo para obtener el id de la persona
 	 * @return  id de la persona */
@@ -112,13 +109,7 @@ public class Persona {
 		this.clave = clave;
 	}
 	
-	public List<Multa> getMultas() {
-		return multas;
-	}
-	
-	public void setMultas(List<Multa> multas) {
-		this.multas = multas;
-	}
+
 	
 	public String getRol() {
 		return rol;

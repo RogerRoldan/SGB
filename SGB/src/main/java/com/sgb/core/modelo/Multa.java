@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -35,9 +33,7 @@ public class Multa {
 	private double valor;
 	
 	/**Relaciones**/
-	@ManyToOne
-	@JoinColumn(name = "idP", insertable=false, updatable=false)
-	private Persona persona;
+
 	
 	
 	
@@ -60,7 +56,7 @@ public class Multa {
 		this.fecha = fecha;
 		this.estadomulta = estadomulta;
 		this.valor = valor;
-		this.persona = persona;
+		
 	}
 
 	/**Metodo para obtener el id de la Multa
@@ -133,13 +129,6 @@ public class Multa {
 		this.valor = valor;
 	}
 
-	public Persona getPersona() {
-		return persona;
-	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
-	}
 
 	
 }

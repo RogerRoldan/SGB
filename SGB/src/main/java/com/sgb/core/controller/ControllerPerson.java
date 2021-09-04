@@ -67,7 +67,7 @@ public class ControllerPerson {
 	}
 	
 	
-	@GetMapping ("/eliminarP/{id}")
+	@GetMapping ("/eliminar/{id}")
 	public String delete(Model model,@PathVariable int id) {
 		service.delete(id);
 		return "redirect:/crudU";

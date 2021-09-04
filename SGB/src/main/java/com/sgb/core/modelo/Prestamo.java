@@ -1,31 +1,50 @@
 package com.sgb.core.modelo;
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 /**
  * Esta clase  corresponde a la informacion de cada Persona
  * @author Roger, Marlon, Yesica
  *
  */
-
+	@Entity
+	@Table(name="prestamo")
 	public class Prestamo {
-		/**Identificador de la persona*/
-		private int idP;
-		/**Identificador de la usuario*/
-		private int idU;
-		/**Identificador del libro*/
-		private int idL;
-		/**Identificador del ejemplar*/
-		private int idE;
-		/**Fecha de inicio del prestamo*/
+		/*Identificador de la persona*/
+		@Id
+		@GeneratedValue
+		private int idPrestamo;
+		/*Identificador de la usuario*/
+		private int idUsuario;
+		/*Identificador del libro*/
+		private int idLibro;
+		/*Identificador del ejemplar*/
+		private int idEjemplar;
+		/*Fecha de inicio del prestamo*/
+		@Temporal (TemporalType.DATE)
+		@DateTimeFormat (iso = ISO.DATE)
 		private Date finicio;
-		/**Fecha de fin del prestamo*/
+		/*Fecha de fin del prestamo*/
+		@Temporal (TemporalType.DATE)
+		@DateTimeFormat (iso = ISO.DATE)
 		private Date ffinal;
 		/** Verificación del libro entregado */
-		private boolean entregado;
+		private String estado;
 	
 		/**Constructor General del prestamo */	
 	public Prestamo() {
 		// TODO Auto-generated constructor stub
 	}
+
+		
 	/**Constructor 
 	 * @param idP del prestamo
 	 * @param idU del usuario
@@ -34,89 +53,92 @@ import java.util.Date;
 	 * @param finicio del prestamo
 	 * @param ffinal del prestamo
 	 * @param entregado del libro
-	 */	
-	public Prestamo(int idP, int idU, int idL, int idE, Date finicio, Date ffinal, boolean entregado) {
-			super();
-			this.idP = idP;
-			this.idU = idU;
-			this.idL = idL;
-			this.idE = idE;
-			this.finicio = finicio;
-			this.ffinal = ffinal;
-			this.entregado = entregado;
-		}
-	/**Metodo para obtener el id del prestamo
-	 * @return  id del prestamo */
-	public int getIdP() {
-		return idP;
+	 */
+
+	public Prestamo(int idPrestamo, int idUsuario, int idLibro, int idEjemplar, Date finicio, Date ffinal,
+			String estado) {
+		super();
+		this.idPrestamo = idPrestamo;
+		this.idUsuario = idUsuario;
+		this.idLibro = idLibro;
+		this.idEjemplar = idEjemplar;
+		this.finicio = finicio;
+		this.ffinal = ffinal;
+		this.estado = estado;
 	}
-	/**Metodo para modificar el id del prestamo
-	 * @param  idP del prestamo */
-	public void setIdP(int idP) {
-		this.idP = idP;
+
+
+	public int getIdPrestamo() {
+		return idPrestamo;
 	}
-	/**Metodo para obtener el id del usuario
-	 * @return  id del usuario */
-	public int getIdU() {
-		return idU;
+
+
+	public void setIdPrestamo(int idPrestamo) {
+		this.idPrestamo = idPrestamo;
 	}
-	/**Metodo para modificar el id del usuario
-	 * @param  idU del usuario */
-	public void setIdU(int idU) {
-		this.idU = idU;
+
+
+	public int getIdUsuario() {
+		return idUsuario;
 	}
-	/**Metodo para obtener el id del libro
-	 * @return  id del libro */
-	public int getIdL() {
-		return idL;
+
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
-	/**Metodo para modificar el id del libro
-	 * @param  idL del libro */
-	public void setIdL(int idL) {
-		this.idL = idL;
+
+
+	public int getIdLibro() {
+		return idLibro;
 	}
-	/**Metodo para obtener el id del ejemplar
-	 * @return  id del ejemplar */
-	public int getIdE() {
-		return idE;
+
+
+	public void setIdLibro(int idLibro) {
+		this.idLibro = idLibro;
 	}
-	/**Metodo para modificar el id del ejemplar
-	 * @param  idE del ejemplar */
-	public void setIdE(int idE) {
-		this.idE = idE;
+
+
+	public int getIdEjemplar() {
+		return idEjemplar;
 	}
-	/**Metodo para obtener la fecha inicial del prestamo
-	 * @return  finicio fecha inicial del prestamo */
+
+
+	public void setIdEjemplar(int idEjemplar) {
+		this.idEjemplar = idEjemplar;
+	}
+
+
 	public Date getFinicio() {
 		return finicio;
 	}
-	/**Metodo para modificar la fecha inicial del prestamo
-	 * @param  finicio fecha inicial del prestamo */
+
+
 	public void setFinicio(Date finicio) {
 		this.finicio = finicio;
 	}
-	/**Metodo para obtener la fecha final del prestamo
-	 * @return  ffinal fecha final del prestamo */
+
+
 	public Date getFfinal() {
 		return ffinal;
 	}
-	/**Metodo para modificar la fecha final del prestamo
-	 * @param  ffinal fecha final del prestamo */
+
+
 	public void setFfinal(Date ffinal) {
 		this.ffinal = ffinal;
 	}
-	/**Metodo para verificar si el libro fue entregado
-	 * @return  entregado  verficación de la entrega del libro */
-	public boolean isEntregado() {
-		return entregado;
+
+
+	public String getEstado() {
+		return estado;
 	}
-	/**Metodo para modificar la variable, si el libro fue entregado
-	 * @param  entregado  verficación de la entrega del libro */
-	public void setEntregado(boolean entregado) {
-		this.entregado = entregado;
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	
 	
 	
 	
-	}
+}
+		
