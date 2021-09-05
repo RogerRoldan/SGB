@@ -79,6 +79,7 @@ public class ControllerFine {
 		return "CrudFineAdministrator";
 	}
 	
+	@Secured({"ROLE_ADMIN"})
 	@GetMapping("/newMulta/{idP}")
 	public String agregarMulta(@PathVariable int idP, Model model) {
 		
@@ -88,10 +89,14 @@ public class ControllerFine {
 		return "FormFine"; 
 		}
 	
+	@Secured({"ROLE_ADMIN"})
 	@PostMapping("/saveMulta")
 	public String saveL(@Validated Multa m,Model model) {
-		m.setFecha(LocalDate.now());
-		m.setEstadomulta("Pendiente");
+		if(m.getFecha()==null && m.getEstadomulta()==null) {
+			m.setFecha(LocalDate.now());
+			m.setEstadomulta("Pendiente");
+		}
+		
 		service.saveM(m);
 		int idp=m.getIdP();
 		return "redirect:/crudMAUA/"+idp;

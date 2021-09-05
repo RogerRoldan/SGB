@@ -62,7 +62,7 @@
 					  <td th:text="${multa.fecha}"></td>
 					  <td th:text="${multa.valor}"></td>
 					  <td align="center" sec:authorize="hasRole('ROLE_ADMIN')" >
-						<a th:href="@{/pagomulta/}+${multa.idM}+${multa.idP}" class="btn btn-success">Pagar</a>
+						<a th:href="@{/pagomulta/}+${multa.idM}" class="btn btn-success">Pagar</a>
 
 						</td>				  
 				  </tr>

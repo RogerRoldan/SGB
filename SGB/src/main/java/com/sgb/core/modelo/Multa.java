@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * Esta clase  corresponde a la informacion de las multas
  * @author Roger, Marlon, Yesica
@@ -26,6 +28,7 @@ public class Multa {
 	/**Descripcion de la multa*/
 	private String descripcion;
 	/**Fecha de la multa*/
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate fecha;
 	/**Estado de la multa*/
 	private String estadomulta;

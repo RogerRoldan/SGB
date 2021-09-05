@@ -1,15 +1,12 @@
 package com.sgb.core.modelo;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 /**
  * Esta clase  corresponde a la informacion de cada Persona
  * @author Roger, Marlon, Yesica
@@ -29,13 +26,11 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 		/*Identificador del ejemplar*/
 		private int idEjemplar;
 		/*Fecha de inicio del prestamo*/
-		@Temporal (TemporalType.DATE)
-		@DateTimeFormat (iso = ISO.DATE)
-		private Date finicio;
+		@DateTimeFormat(pattern="yyyy-MM-dd")
+		private LocalDate finicio;
 		/*Fecha de fin del prestamo*/
-		@Temporal (TemporalType.DATE)
-		@DateTimeFormat (iso = ISO.DATE)
-		private Date ffinal;
+		@DateTimeFormat(pattern="yyyy-MM-dd")
+		private LocalDate ffinal;
 		/** Verificación del libro entregado */
 		private String estado;
 	
@@ -43,6 +38,8 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	public Prestamo() {
 		// TODO Auto-generated constructor stub
 	}
+
+		
 
 		
 	/**Constructor 
@@ -55,7 +52,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	 * @param entregado del libro
 	 */
 
-	public Prestamo(int idPrestamo, int idUsuario, int idLibro, int idEjemplar, Date finicio, Date ffinal,
+	public Prestamo(int idPrestamo, int idUsuario, int idLibro, int idEjemplar, LocalDate finicio, LocalDate ffinal,
 			String estado) {
 		super();
 		this.idPrestamo = idPrestamo;
@@ -68,9 +65,13 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	}
 
 
+
+
 	public int getIdPrestamo() {
 		return idPrestamo;
 	}
+
+
 
 
 	public void setIdPrestamo(int idPrestamo) {
@@ -78,9 +79,13 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	}
 
 
+
+
 	public int getIdUsuario() {
 		return idUsuario;
 	}
+
+
 
 
 	public void setIdUsuario(int idUsuario) {
@@ -88,9 +93,13 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	}
 
 
+
+
 	public int getIdLibro() {
 		return idLibro;
 	}
+
+
 
 
 	public void setIdLibro(int idLibro) {
@@ -98,9 +107,13 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	}
 
 
+
+
 	public int getIdEjemplar() {
 		return idEjemplar;
 	}
+
+
 
 
 	public void setIdEjemplar(int idEjemplar) {
@@ -108,24 +121,34 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	}
 
 
-	public Date getFinicio() {
+
+
+	public LocalDate getFinicio() {
 		return finicio;
 	}
 
 
-	public void setFinicio(Date finicio) {
+
+
+	public void setFinicio(LocalDate finicio) {
 		this.finicio = finicio;
 	}
 
 
-	public Date getFfinal() {
+
+
+	public LocalDate getFfinal() {
 		return ffinal;
 	}
 
 
-	public void setFfinal(Date ffinal) {
+
+
+	public void setFfinal(LocalDate ffinal) {
 		this.ffinal = ffinal;
 	}
+
+
 
 
 	public String getEstado() {
@@ -133,10 +156,11 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 	}
 
 
+
+
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	
 	
 	
 	
