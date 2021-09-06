@@ -49,7 +49,18 @@ public class ControllerExemplar {
 		Ejemplar e = service.listarIdE(idE);
 		e.setIdE(idE);
 		e.setIdL(idL);
-		e.setEstado(estado);
+		String est =e.getEstado();
+		switch(est)
+		{
+		case ("Prestado") :
+			
+			
+		case ("Disponible") : e.setEstado(estado);
+			
+		
+		
+		}
+		
 		service.saveE(e);
 		model.addAttribute("ejemplar",e);
 		return "redirect:/crudE/{idL}"; }

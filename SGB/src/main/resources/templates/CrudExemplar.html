@@ -72,9 +72,9 @@
 									</a>
 				  
 									<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" sec:authorize="hasRole('ROLE_ADMIN')" >
-									  <li><a class="dropdown-item" th:href="@{/editarE/{idE}/{idL}/Prestado(idL = ${ejemplar.idL}, idE = ${ejemplar.idE})}">Prestado</a></li>
+									  
 									  <li><a class="dropdown-item" th:href="@{/editarE/{idE}/{idL}/Disponible(idL = ${ejemplar.idL}, idE = ${ejemplar.idE})}">Disponible</a></li>
-									  <li><a class="dropdown-item" th:href="@{/editarE/{idE}/{idL}/Descalificado(idL = ${ejemplar.idL}, idE = ${ejemplar.idE})}">Descalificado</a></li>
+									  <li><a class="dropdown-item" th:href="@{/editarE/{idE}/{idL}/Descalificado(idL = ${ejemplar.idL}, idE = ${ejemplar.idE})}">Descalificar</a></li>
 									</ul>
 							  </li>
 							</ul> 

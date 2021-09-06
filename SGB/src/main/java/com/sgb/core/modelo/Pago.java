@@ -1,5 +1,7 @@
 package com.sgb.core.modelo;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,10 +13,10 @@ import javax.persistence.Table;
 public class Pago {
 	@Id
 	@GeneratedValue
-	private int id;
-	private int idM;
-	private int idP;
-	private int fecha;
+	private int idPago;
+	private int idMulta;
+	private int idPersona;
+	private LocalDate fecha;
 	private double valorpago;
 	
 	
@@ -24,52 +26,52 @@ public class Pago {
 	}
 
 
-	public Pago(int id, int idM, int idP, int fecha, double valorpago) {
+	public Pago(int idPago, int idMulta, int idPersona, LocalDate fecha, double valorpago) {
 		super();
-		this.id = id;
-		this.idM = idM;
-		this.idP = idP;
+		this.idPago = idPago;
+		this.idMulta = idMulta;
+		this.idPersona = idPersona;
 		this.fecha = fecha;
 		this.valorpago = valorpago;
 	}
 
 
-	public int getId() {
-		return id;
+	public int getIdPago() {
+		return idPago;
 	}
 
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdPago(int idPago) {
+		this.idPago = idPago;
 	}
 
 
-	public int getIdM() {
-		return idM;
+	public int getIdMulta() {
+		return idMulta;
 	}
 
 
-	public void setIdM(int idM) {
-		this.idM = idM;
+	public void setIdMulta(int idMulta) {
+		this.idMulta = idMulta;
 	}
 
 
-	public int getIdP() {
-		return idP;
+	public int getIdPersona() {
+		return idPersona;
 	}
 
 
-	public void setIdP(int idP) {
-		this.idP = idP;
+	public void setIdPersona(int idPersona) {
+		this.idPersona = idPersona;
 	}
 
 
-	public int getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
 
-	public void setFecha(int fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 
@@ -82,10 +84,8 @@ public class Pago {
 	public void setValorpago(double valorpago) {
 		this.valorpago = valorpago;
 	}
-	
-	
-	
-	
+
+
 	
 	
 	

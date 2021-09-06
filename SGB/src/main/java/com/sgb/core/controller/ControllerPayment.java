@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.sgb.core.interfaceService.IFineService;
 import com.sgb.core.interfaceService.IPaymentService;
@@ -21,13 +22,19 @@ public class ControllerPayment {
 	
 	
 	
-	@GetMapping("CrudPagos")
+	@GetMapping("/CrudPagos")
 	public String tablaPagos(Model model) {
 		
 		List<Pago>pagos= service.tablapagos();
 		model.addAttribute("pagos",pagos);
 		
 		return "CrudPagos";
+	}
+	
+	@GetMapping("newPago/{idm}/{valor}/{idpersona}")
+	public String newpago(Model model, @PathVariable int idm, @PathVariable double valor, @PathVariable int idpersona) {
+		
+		return null;
 	}
 	
 }
