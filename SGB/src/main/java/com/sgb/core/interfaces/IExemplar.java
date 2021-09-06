@@ -10,5 +10,6 @@ public interface IExemplar extends CrudRepository<Ejemplar, Integer>  {
 
 	List<Ejemplar> findByIdL(int idL);
 	Ejemplar findByIdE(int idE);
+	List<Ejemplar> findByIdLAndEstado(int idL, String estado);
 
 }

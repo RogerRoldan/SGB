@@ -44,6 +44,12 @@ public class ExemplarService implements IExemplarService{
 	public List<Ejemplar> listarIdL(int idL) {
 		return data.findByIdL(idL);
 	}
+
+	@Override
+	public List<Ejemplar> listaridLAndEstado(int idL, String estado) {
+	
+		return data.findByIdLAndEstado(idL, estado);
+	}
 }
 
 	

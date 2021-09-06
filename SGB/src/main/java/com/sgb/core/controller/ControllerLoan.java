@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.sgb.core.interfaceService.IBookService;
+import com.sgb.core.interfaceService.IExemplarService;
 import com.sgb.core.interfaceService.ILoanService;
 import com.sgb.core.interfaceService.IPersonService;
+import com.sgb.core.modelo.Ejemplar;
 import com.sgb.core.modelo.Libro;
 import com.sgb.core.modelo.Persona;
 import com.sgb.core.modelo.Prestamo;
@@ -29,6 +31,7 @@ public class ControllerLoan {
 	private IPersonService serviceperson;
 	@Autowired
 	private IBookService servicebook;
+	@Autowired IExemplarService serviceexemplar;
 	
 	
 	
@@ -75,20 +78,37 @@ public class ControllerLoan {
 	}
 
 	
-	@GetMapping("/newPrestamo/{id}")
-	public String agregarPrestamo(@PathVariable int id, Model model) {
+	@GetMapping("/newPrestamo/{idpersona}/{idlibro}")
+	public String agregarprestamoidlibro(@PathVariable int idpersona,@PathVariable int idlibro, Model model)
+	{
+		List<Ejemplar>ejemplar= serviceexemplar.listaridLAndEstado(idlibro,"Disponible");
+		Prestamo prestamo = new Prestamo();
+		List<Libro>libro = servicebook.tablaL();
+		
+		prestamo.setIdUsuario(idpersona);
+		
+		model.addAttribute("prestamo",prestamo);
+		model.addAttribute("libro",libro);
+		model.addAttribute("ejemplar",ejemplar);
+		
+		return "FormLoan";
+	}
+	
+	@GetMapping({"/newPrestamo/{idpersona}"})
+	public String agregarPrestamo(@PathVariable int idpersona, Model model) {
 		
 		Prestamo prestamo = new Prestamo();
 		List<Libro>libro = servicebook.tablaL();
-		prestamo.setIdUsuario(id);
+		prestamo.setIdUsuario(idpersona);
 		model.addAttribute("prestamo",prestamo);
 		model.addAttribute("libro",libro);
+		model.addAttribute("ejemplar",new Ejemplar());
 		return "FormLoan"; 
 		}
 	
-	@PostMapping("/savePrestamo")
-	public String saveL(@Validated Prestamo p,Model model) {
-		
+	@PostMapping("/savePrestamo/{idl}")
+	public String saveL(@Validated Prestamo p,@PathVariable int idl,Model model) {
+		p.setIdLibro(idl);
 		p.setEstado("Activo");
 		service.saveP(p);
 		int id=p.getIdUsuario();
