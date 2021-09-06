@@ -40,7 +40,7 @@ public class ControllerBook {
 	@PostMapping("/saveL")
 	public String saveL(@Validated Libro l,Model model) {
 		service.saveL(l);
-		return "redirect:/CrudBook";
+		return "redirect:/tablaL";
 	}
 	
 	@GetMapping("/editarL/{idL}")

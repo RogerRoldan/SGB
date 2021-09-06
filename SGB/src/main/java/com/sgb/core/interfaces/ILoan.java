@@ -9,7 +9,7 @@ import com.sgb.core.modelo.Prestamo;
 @Repository
 public interface ILoan extends CrudRepository<Prestamo, Integer>{
 
-	List<Prestamo> findByIdPrestamo( int idPrestamo);
+	Prestamo findByIdPrestamo( int idPrestamo);
 	List<Prestamo> findByIdUsuarioAndEstado(int idPrestamo, String entregado);
 
 }

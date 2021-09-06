@@ -36,7 +36,7 @@
 					  <td>
 					  <a th:href="@{/editarL/}+${libro.idL}" class="btn btn-warning" sec:authorize="hasRole('ROLE_ADMIN')" >Editar</a>
 					  <a th:href="@{/crudE/}+${libro.idL}" class="btn btn-info">Información</a>
-					  <a class="btn btn-danger" sec:authorize="hasRole('ROLE_ADMIN')" >Descalificar</a>
+					  
 					  </td>
 				  </tr>
 			  </tbody>

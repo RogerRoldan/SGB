@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+ <head th:replace="plantilla :: head"></head>
+
+<body>
+ <header th:replace="plantilla :: header"></header> 
+	<!-- tabla-->
+	<div class="container">
+	<br>
+	<h2 align="center">Historial de Pagos</h2>
+	<div class="container mt-4 ">
+	
+	<h1></h1>
+	<div class="container">
+		<div class="row"> 
+			<div class="col-lg-12">
+			<table class="table display nowrap" id="example" cellspacing="0" width="100%">
+		 	<thead class="table-dark">
+			 <tr>
+				 <th>ID PAGO</th>
+				 <th data-priority="1">ID MULTA</th>
+				 <th>ID RECAUDADOR</th>
+				 <th>FECHA</th>
+				 <th>VALOR</th>
+			 </tr>
+		 	</thead> 
+			  <tbody>
+				   <tr th:each="pagos:${pagos}">
+					  <td th:text="${pagos.idPago}"></td>
+					  <td th:text="${pagos.idMulta}"></td>
+					  <td th:text="${pagos.idPersona}"></td>
+					  <td th:text="${pagos.fecha}"></td>
+					  <td th:text="${pagos.valorpago}"></td>			  
+				  </tr>
+			  </tbody>
+		</table>
+			</div>
+		</div>
+	</div>
+	</div>	
+	</div>
+     <script src="/paginacion.js"></script>
+</body>
+ </html>

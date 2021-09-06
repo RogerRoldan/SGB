@@ -9,6 +9,7 @@ public interface IFineService {
 	public void delete(int id);
 	public List<Multa> listarIdP(int idP);
 	public List<Multa> listarIdPAndEstado(int idP, String estadomulta);
+	public Multa listaridM(int idM);
 	
 	
 

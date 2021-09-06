@@ -49,6 +49,13 @@ public class FineService implements IFineService {
 	}
 
 
+	@Override
+	public Multa listaridM(int idM) {
+		
+		return data.findByIdM(idM);
+	}
+
+
 
 
 

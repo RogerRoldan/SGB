@@ -9,8 +9,9 @@ import com.sgb.core.modelo.Multa;
 public interface IFine extends CrudRepository<Multa, Integer> {
 
 	List<Multa> findByIdP(int idP);
-	
 	List<Multa> findByIdPAndEstadomulta(int idP, String estadomultas);
+	Multa findByIdM(int idm);
+	
 	
 
 

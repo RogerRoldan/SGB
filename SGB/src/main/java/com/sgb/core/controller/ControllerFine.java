@@ -66,7 +66,7 @@ public class ControllerFine {
 		List<Multa>multa=service.listarIdPAndEstado(idp, estado);
 		model.addAttribute("multa",multa);
 		model.addAttribute("persona",p);
-		return "CrudHistoric";
+		return "CrudFineHistoric";
 	}
 	
 	

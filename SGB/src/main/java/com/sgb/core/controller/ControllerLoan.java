@@ -31,7 +31,28 @@ public class ControllerLoan {
 	private IPersonService serviceperson;
 	@Autowired
 	private IBookService servicebook;
-	@Autowired IExemplarService serviceexemplar;
+	@Autowired 
+	private IExemplarService serviceexemplar;
+	@Autowired
+	private ILoanService serviceloan;
+	
+	
+	
+	@GetMapping("/devolver/{idp}")
+	public String devolver(Model model, @PathVariable int idp) {
+	
+		Prestamo prestamo = serviceloan.listaridprestamo(idp);
+		prestamo.setEstado("Entregado");
+		int idpersona= prestamo.getIdUsuario();
+		
+		Ejemplar ejemplar = serviceexemplar.listarIdE(prestamo.getIdEjemplar());
+		ejemplar.setEstado("Disponible");
+		
+		serviceloan.saveP(prestamo);
+		serviceexemplar.saveE(ejemplar);
+		
+		return "redirect:/CrudLoanAUE/"+idpersona;
+	}
 	
 	
 	
@@ -85,6 +106,7 @@ public class ControllerLoan {
 		Prestamo prestamo = new Prestamo();
 		List<Libro>libro = servicebook.tablaL();
 		
+		
 		prestamo.setIdUsuario(idpersona);
 		
 		model.addAttribute("prestamo",prestamo);
@@ -110,6 +132,11 @@ public class ControllerLoan {
 	public String saveL(@Validated Prestamo p,@PathVariable int idl,Model model) {
 		p.setIdLibro(idl);
 		p.setEstado("Activo");
+		
+		Ejemplar ejemplar = serviceexemplar.listarIdE(p.getIdEjemplar());
+		ejemplar.setEstado("Prestado");
+		
+		serviceexemplar.saveE(ejemplar);
 		service.saveP(p);
 		int id=p.getIdUsuario();
 		return "redirect:/CrudLoanAUA/"+id;

@@ -24,7 +24,7 @@ public class LoanService implements ILoanService{
 
 	
 	@Override
-	public List<Prestamo> listaridprestamo(int idprestamo) {
+	public Prestamo listaridprestamo(int idprestamo) {
 		
 		return data.findByIdPrestamo(idprestamo);
 	}
