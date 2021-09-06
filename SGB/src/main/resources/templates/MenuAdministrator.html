@@ -63,37 +63,37 @@ xmlns:th="http://www.thymeleaf.org">
         
         <!--Botones-->
             <section id=contenido>
+				<div class="container" >
+					<div class="row">
+                		<div class="col-md uno">
+                    		<a th:href="@{crudL}">
+                        		<img th:src="@{images/libro.png}" alt="">
+                        		<h4>GESTIÓN DE  LIBROS</h4>
+                    		</a>
+                		</div>
 
-                <div class="uno">
-                    <a th:href="@{crudL}">
-                        <img th:src="@{images/libro.png}" alt="">
-                        <h4>GESTIÓN DE  LIBROS</h4>
-                    </a>
-                </div>
+                		<div class="col-md dos">
+                    		<a th:href="@{crudU}">
+                        		<img th:src="@{images/gestion_usu.png}" alt="">
+                        		<h4>GESTIÓN DE  USUARIOS</h4>
+                    		</a>
+                		</div>
 
-                <div class="dos">
-                    <a th:href="@{crudU}">
-                        <img th:src="@{images/gestion_usu.png}" alt="">
-                        <h4>GESTIÓN DE  USUARIOS</h4>
-                    </a>
-                </div>
+                		<div class="col-md tres">
+                    		<a th:href="@{/CrudMultasAdministrador}">
+                        		<img th:src="@{images/multa.png}" alt="">
+                        		<h4>GESTIÓN DE MULTAS</h4>
+                    		</a>
+                		</div>
 
-                <div class="tres">
-                    <a th:href="@{/CrudMultasAdministrador}">
-                        <img th:src="@{images/multa.png}" alt="">
-                        <h4>GESTIÓN DE MULTAS</h4>
-                    </a>
-                </div>
-
-                <div class="cuatro">
-                    <a th:href="@{CrudLoanAdmin}">
-                        <img th:src="@{images/prestamos.png}" alt="">
-                        <h4>PRÉSTAMOS DE LIBROS</h4>
-                    </a>
-                </div>
-
-              
-
+                		<div class="col-md cuatro">
+                    		<a th:href="@{CrudLoanAdmin}">
+                       			<img th:src="@{images/prestamos.png}" alt="">
+                        		<h4>PRÉSTAMOS DE LIBROS</h4>
+                    		</a>
+                		</div>
+					</div>
+				</div>
             </section>
 
         <!-- FOOTER -->

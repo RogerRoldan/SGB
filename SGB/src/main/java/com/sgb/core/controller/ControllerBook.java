@@ -15,8 +15,9 @@ import com.sgb.core.interfaceService.IBookService;
 import com.sgb.core.modelo.Libro;
 
 @Controller
-@RequestMapping
 @Secured({"ROLE_ADMIN","ROLE_USER"})
+@RequestMapping
+
 
 public class ControllerBook {
 	
@@ -49,4 +50,6 @@ public class ControllerBook {
 		model.addAttribute("libro", libro);
 		return "FormBook";
 	}
+	
+	
 }

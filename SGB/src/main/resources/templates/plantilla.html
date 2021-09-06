@@ -42,7 +42,7 @@
 				</div>
 
 
-				<div class="col-lg-10 col-sm-9">
+				<div class="col-lg-10 col-sm-6">
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -62,13 +62,13 @@
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" th:href="@{/MenuUsuario}">Menú Usuario</a>
-							</li>
-							</ul>
+							
 					</div>
 				</div>
 			 </div>
 
-			<div class="col-lg-3 col-sm-6 ">
+			<div class="col-lg-2 col-sm-3 ">
+				<div class="col-lg-8">
 					<ul class="navbar-nav" >
 						<li sec:authorize="!isAuthenticated()">
 						<a class="btn btn-outline-warning" th:href="@{/login}">Iniciar Sesión</a>
@@ -79,21 +79,30 @@
 							</a>
 		
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<li><a class="dropdown-item" href="#">Perfil</a></li>
-							<li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
 							<form th:action="@{/logout}" method="post">
 								<button class="dropdown-item"type="submit">Cerrar Sesión</button>
 							</form>
 							</ul>
 						</li>
 					</ul>
+					
 			</div>
-
+		</div>	
+		<div class="col-lg-1 col-sm-3">
+		<img th:src="@{/images/lupa.png}" onclick="lupa()" src="/src/main/resources/static/images/lupa.png" width="60px">
+		
+		</div>
 		 	      
 		</div>
 	
 	</nav>
 	
 </header>
+
+		<script>
+			function lupa(){
+			document.body.style.zoom = "140%" 
+			}
+		</script>
 </body>
 </html>

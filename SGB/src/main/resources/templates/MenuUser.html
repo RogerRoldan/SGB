@@ -62,27 +62,30 @@
 
         <!--Botones-->
             <section id=contenido>
-                <div class="seis">
-                    <a th:href="@{crudL}">
-                        <img th:src="@{images/consultar.png}" alt="">
-                        <h4>CONSULTAR LIBROS</h4>
-                        
-                    </a>
-                </div>
-                <div class="siete">
-                    <a th:href="@{CrudLoan}">
-                        <img th:src="@{images/prestamos.png}" alt="">
-                        <h4>PRÉSTAMOS DE LIBROS</h4>
-                    </a>
-                </div>
-                <div class="ocho">
-                    <a th:href="@{crudMU}">
-                        <img th:src="@{images/multa.png}" alt="">
-                        <h4>CONSULTAR MULTAS</h4>
-                    </a>
-                </div>
+                <div class="container" >
+					<div class="row">
+                		<div class="col-md seis">
+                    		<a th:href="@{crudL}">
+                        		<img th:src="@{images/consultar.png}" alt="">
+                        		<h4>CONSULTAR LIBROS</h4>
+                    		</a>
+                		</div>
+                		<div class="col-md siete">
+                    		<a th:href="@{CrudLoan}">
+                        		<img th:src="@{images/prestamos.png}" alt="">
+                        		<h4>PRÉSTAMOS DE LIBROS</h4>
+                    		</a>
+                		</div>
+                		<div class="col-md ocho">
+                    		<a th:href="@{crudMU}">
+                        		<img th:src="@{images/multa.png}" alt="">
+                        		<h4>CONSULTAR MULTAS</h4>
+                    		</a>
+                		</div>
+            		</div>
+            	</div>
             </section>
-
+            
         <!-- FOOTER -->
         <footer id="footer" style="background-color: #00ac96;" class="text-white py-1">
             <div class="container">

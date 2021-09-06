@@ -1,5 +1,4 @@
 package com.sgb.core.modelo;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,8 +44,7 @@ public class Persona {
 	 * @param correo de la persona
 	 * @param clave de la persona
 	 */
-	public Persona(int id, String name, String telefono, String correo, String clave, String rol, boolean enabled,
-			List<Multa> multas) {
+	public Persona(int id, String name, String telefono, String correo, String clave, String rol, boolean enabled	) {
 		super();
 		this.id = id;
 		this.name = name;
