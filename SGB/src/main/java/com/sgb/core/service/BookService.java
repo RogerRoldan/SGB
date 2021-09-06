@@ -17,9 +17,10 @@ public class BookService implements IBookService{
 		return (List<Libro>)data.findAll();
 	}
 
+	
 	@Override
-	public Optional<Libro> listarID(int idL) {
-		return data.findById(idL);
+	public Optional<Libro>listarIdL(int idL) {
+		return data.findByIdL(idL);
 	}
 
 	@Override

@@ -44,9 +44,11 @@ public class ControllerBook {
 		return "redirect:/tablaL";
 	}
 	
+
+	
 	@GetMapping("/editarL/{idL}")
 	public String editar(@PathVariable int idL, Model model) {
-		Optional<Libro>libro=service.listarID(idL);
+		Optional<Libro>libro=service.listarIdL(idL);
 		model.addAttribute("libro", libro);
 		return "FormBook";
 	}

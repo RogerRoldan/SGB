@@ -46,7 +46,7 @@
 			      </div>
 
 				<div class="form-group">
-							<button onclick="validcap()" class="btn btn-lg btn-success btn-block">Iniciar Sesión</button>
+							<button onclick="validcap()" id="envio" class="btn btn-lg btn-success btn-block">Iniciar Sesión</button>
 				</div>			
 			</form>
 			 <h6>Captcha no visible <img th:src="@{/images/refresh.png}" src="/static/images/refresh.png" width="40px" onclick="cap()"></h6>
@@ -73,6 +73,7 @@
                 var stg2 = document.getElementById('textinput').value;
                 if(stg1==stg2){
                   alert("Captcha Valido");
+                  
                   return true;
                 }else{
                 	window.location.reload(true);

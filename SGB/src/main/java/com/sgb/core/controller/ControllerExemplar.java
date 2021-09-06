@@ -27,7 +27,7 @@ public class ControllerExemplar {
 
 	@GetMapping({"/crudE/{idL}","/tablaE/{idL}"})
 	public String tablaE(@PathVariable int idL, Model model) {
-		Optional<Libro>libro=servicebook.listarID(idL);
+		Optional<Libro>libro=servicebook.listarIdL(idL);
 		model.addAttribute("libro", libro);
 		List<Ejemplar>ejemplar=service.listarIdL(idL);
 		model.addAttribute("ejemplar",ejemplar);
